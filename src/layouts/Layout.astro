@@ -1,42 +1,102 @@
 ---
-interface Props {
-	title: string;
+	const { title } = Astro.props;
+
+
+	const products=[
+
+{
+	icon: "",
+	name: "producto1"
+},
+{
+	icon: "",
+	name: "producto2"
+},
+{
+	icon: "",
+	name: "producto3"
 }
 
-const { title } = Astro.props;
+	]
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Astro description" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<title>{title}</title>
+</head>
+
+<body>
+	<div class="header">
+		<div class=" header_info">
+			contenedor de la cabeza
+		</div>
+
+	</div>
+	<div class="container banner">
+	a
+	</div>
+
+<nav class="container main_menu">
+<a href="#">Inicio</a><a href="#">Productos</a>
+</nav>
+<div class="container product_list">
+{products.map((data)=>
+<div>
+<img src="" alt="">
+nombre del producto
+	</div>
+)
+
+
+
+}
+
+<div>
+
+nombre del producto
+</div></div>
+<div class="">	</div>
+<div class="container flooter"></div>
+	<slot />
+</body>
+
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+	.container {
+		max-width: 1280px;
+		background: white;
+		margin: 0 auto;
+		border: 1px solid white;
 	}
-	html {
+	.options{
+		display: flex;
+		justify-content: space-between;
+	}
+	.header {
+		background-color: aquamarine;
+	}
+	.header_info{
+		height: 80px;
+
+	}
+	.banner{
+		height: 240px;
+	}
+	
+
+	html,
+	body {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		padding: 0;
+		margin: 0;
 	}
+
 	code {
 		font-family:
 			Menlo,
@@ -48,4 +108,41 @@ const { title } = Astro.props;
 			Courier New,
 			monospace;
 	}
+	.main_menu{
+		
+background-color: #ee4d2d;
+display: flex;
+height: 40px;
+transition: background 300ms ease-in-out;
+
+}
+.main_menu a{
+	display: flex;
+	height: 100%;
+	align-items: center;
+	text-decoration: none;
+	padding: 0px 12px;
+	color: #fff;
+
+}
+.main_menu a:hover{
+	background-color: #f0a202;
+}
+.product_list{
+display: flex;
+height: 80px;
+}
+.product_list div{
+	height: 100%;
+	display: flex;
+	max-width: 120px;
+	text-align: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid gray;
+border-radius: 4px;
+margin-right: 3px;
+
+}
 </style>
