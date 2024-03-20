@@ -1,0 +1,108 @@
+---
+interface Props {
+	title: string;
+}
+
+import { Icon } from 'astro-icon/components';
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="bg-zinc-800 container max-w-full justify-center flex flex-wrap gap-1">
+			<div class="container flex items-center">
+				<!-- Valores arbitrarios -> class="h-[61px]" -->
+				<img class="h-16" src="/public/aliexpress.webp" alt="">
+				<div class="relative w-3/4">
+					<input class="w-full h-9 rounded-full pl-4 outline-none pr-14" type="text" placeholder="Buscar...">
+					<div class="absolute right-1 top-[2px] bg-zinc-800 inline-block text-white rounded-2xl py-1 px-2">
+						<Icon class="size-6" name="mdi:search" />
+					</div>					
+				</div>				
+				<a href="" class="text-white flex items-center gap-x-1 ml-5">
+					<Icon class="size-7" name="mdi:qrcode" />
+					<p class="w-24 text-xs" >Descarga la app de AliExpress</p>
+				</a>
+				<a href="" class="text-white flex items-center gap-x-1 ml-5">
+					<Icon class="size-7" name="mdi:person-outline" />
+					<p class="text-xs w-40" >¡Bienvenido! <br> <span class="font-medium">Identifícate / Regístrate</span></p>
+				</a>
+				<a href="" class="text-white flex items-center gap-x-1 mr-3">
+					<!-- <Icon class="size-7" name="mdi:person-outline" /> -->
+					<Icon class="w-6 h-4" name="flagpack:co" />
+					<!-- <img class="w-6 h-4" src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg" alt=""> -->
+					<p class="text-xs" >ES/ <br> <span class="font-medium">COP</span></p>
+				</a>
+				<a href="" class="text-white flex items-center gap-x-1 ml-5 w-30">
+					<Icon class="size-7" name="mdi:shopping-cart-outline" />
+					<div class="">						
+						<p class="text-xs font-medium bg-white text-black rounded-xl w-6 text-center">0</p>
+						<span class="text-xs font-medium">Cesta</span>
+					</div>
+				</a>						
+			</div>
+			<div class="container flex justify-around text-white mb-2 items-center">
+				<a class="h-10 text-lg rounded-full border-2 text-center px-4 flex items-center" href="">Todas las categorías</a>
+				<a class="h-10 text-lg pt-[6px]" href="">+3 artículos desde US $2.99</a>
+				<a class="h-10 text-lg pt-[6px]" href="">SuperOfertas</a>
+				<a class="h-10 text-lg pt-[6px]" href="">Plaza</a>
+				<a class="h-10 text-lg pt-[6px]" href="">Nuevo</a>
+				<a class="h-10 text-lg pt-[6px]" href="">AliExpress</a>
+				<a class="h-10 text-lg pt-[6px]" href="">Más</a>
+			</div>
+		</div>
+		<!-- <div class="advertisements">
+
+		</div>
+		<div class="optionButtons">
+
+		</div>
+		<div class="firstBuy">
+
+		</div> -->
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+		background-size: 224px;
+	}
+	body {
+		padding: 0;
+		margin: 0;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>

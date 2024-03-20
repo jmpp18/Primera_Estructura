@@ -1,0 +1,25 @@
+---
+interface Props {
+	href: string;
+    name: string;
+    img: string;
+}
+
+const { href, name, img } = Astro.props;
+---
+
+<a href={href} class="buttonWithImage">
+    <img src={img} id="imageOfButton" alt="">
+    <p>{name}</p>
+</a>
+<style>
+    .buttonWithImage {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    #imageOfButton {
+        max-width: 30px;
+        max-height: 30px;
+    }
+</style>

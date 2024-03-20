@@ -1,0 +1,20 @@
+---
+interface Props {
+	href: string;
+    img: string;
+}
+
+const { href, img } = Astro.props;
+---
+<div class="initialButton">
+    <a href={href}>
+        <img src={img} alt="">
+    </a>
+</div>
+<style>
+    .initialButton {
+        background-color: red;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+</style>
