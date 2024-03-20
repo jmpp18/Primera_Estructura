@@ -33,16 +33,15 @@ const { title } = Astro.props;
 					<Icon class="size-7" name="mdi:qrcode" />
 					<p class="w-24 text-xs" >Descarga la app de AliExpress</p>
 				</a>
+				<a href="" class="text-white flex items-center gap-x-1 mr-3">
+					<Icon class="w-6 h-4" name="flagpack:co" />
+					<p class="text-xs" >ES/ <br> <span class="font-medium">COP</span></p>
+				</a>
 				<a href="" class="text-white flex items-center gap-x-1 ml-5">
 					<Icon class="size-7" name="mdi:person-outline" />
 					<p class="text-xs w-40" >¡Bienvenido! <br> <span class="font-medium">Identifícate / Regístrate</span></p>
 				</a>
-				<a href="" class="text-white flex items-center gap-x-1 mr-3">
-					<!-- <Icon class="size-7" name="mdi:person-outline" /> -->
-					<Icon class="w-6 h-4" name="flagpack:co" />
-					<!-- <img class="w-6 h-4" src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg" alt=""> -->
-					<p class="text-xs" >ES/ <br> <span class="font-medium">COP</span></p>
-				</a>
+				
 				<a href="" class="text-white flex items-center gap-x-1 ml-5 w-30">
 					<Icon class="size-7" name="mdi:shopping-cart-outline" />
 					<div class="">						
@@ -51,25 +50,49 @@ const { title } = Astro.props;
 					</div>
 				</a>						
 			</div>
-			<div class="container flex justify-around text-white mb-2 items-center">
-				<a class="h-10 text-lg rounded-full border-2 text-center px-4 flex items-center" href="">Todas las categorías</a>
-				<a class="h-10 text-lg pt-[6px]" href="">+3 artículos desde US $2.99</a>
-				<a class="h-10 text-lg pt-[6px]" href="">SuperOfertas</a>
-				<a class="h-10 text-lg pt-[6px]" href="">Plaza</a>
-				<a class="h-10 text-lg pt-[6px]" href="">Nuevo</a>
-				<a class="h-10 text-lg pt-[6px]" href="">AliExpress</a>
+			<div class="container  flex justify-around cursor-pointer text-white mb-2 items-center">
+
+				<a class="h-10 group flex hover:invert items-center relative text-lg rounded-3xl hover:rounded-b-none border-2 text-center px-4 bg-black" href="">Todas las categorías 
+					<menu class="hidden group-hover:block text-white left-0 top-8 border-l-slate-50 rounded-b-3xl w-full absolute bg-black">
+						<ul>
+							<li>hogar y jardin</li>
+							<li>cabello y pelucas</li>
+							<li>moda hombre</li>
+							<li>Accesorios</li>
+							<li>electronica</li>
+							<li>hogar e Iluminacion</li>
+							<li>electro-domesticos</li>
+							<li>motor</li>
+							<li>bolsos y maletas</li>
+							<li>zapatod</li>
+							<li>disfraces</li>
+							<li>moda mujer</li>
+							<li>deportes y ocio</li>
+							<li>juguetes y juegos</li>
+							<li>infantil y premama</li>
+							<li>telefonia y comuni-cacion</li>
+							<li>informatica y escuela</li>
+							<li>muebles</li>
+							<li>mascotas</li>
+							<li>seguridad</li>
+							<li></li>
+						</ul>
+					</menu>
+
+				</a>
+
+				<a class="h-10 text-lg pt-[6px]" href="">NN</a>
+				<a class="h-10 text-lg pt-[6px]" href="">SuperVentas</a>
+				<a class="h-10 text-lg pt-[6px]" href="">Mejores Marcas</a>
+				<a class="h-10 text-lg pt-[6px]" href="">Hogar y Jardin</a>
+				<a class="h-10 text-lg pt-[6px]" href="">Cabello y Pelucas</a>
+				<a class="h-10 text-lg pt-[6px]" href="">Moda Hombre</a>
+				<a class="h-10 text-lg pt-[6px]" href="">Accesorios</a>
+				<a class="h-10 text-lg pt-[6px]" href="">Electronica</a>
+				<a class="h-10 text-lg pt-[6px]" href="">Hogar e Iluminacion</a>
 				<a class="h-10 text-lg pt-[6px]" href="">Más</a>
 			</div>
 		</div>
-		<!-- <div class="advertisements">
-
-		</div>
-		<div class="optionButtons">
-
-		</div>
-		<div class="firstBuy">
-
-		</div> -->
 		<slot />
 	</body>
 </html>
